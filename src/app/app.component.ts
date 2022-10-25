@@ -15,7 +15,7 @@ import {MatTableDataSource} from '@angular/material/table';
 export class AppComponent implements OnInit {
   title = 'catelog';
 
-  displayedColumns: string[] = ['title', 'priority', 'bugPoints', 'bugID','description','date'];
+  displayedColumns: string[] = ['title', 'priority', 'bugPoints', 'bugID','description','date','action'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -30,7 +30,11 @@ export class AppComponent implements OnInit {
   openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
     this.dialog.open(DialogComponent, {
       width:"30%"
-    });
+    }).afterClosed().subscribe(val=>{
+      if(val === 'save'){
+        this.getAllBugs();
+      }
+    })
   }
   getAllBugs(){
       this.api.getBug()
@@ -47,7 +51,16 @@ export class AppComponent implements OnInit {
 
       
   }
-
+  editBug(row: any){
+    this.dialog.open(DialogComponent,{
+      width: '30%',
+      data:row
+    }).afterClosed().subscribe(val=>{
+      if(val === 'update'){
+        this.getAllBugs();
+      }
+    })
+  }
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();

@@ -1,21 +1,21 @@
 {
   "bugList": [
     {
-      "title": "Bug 1",
-      "priority": "High",
-      "bugPoints": "4",
-      "bugID": 1,
-      "description": "this is a random bug",
+      "title": "Bounce to Homepage",
+      "priority": "Medium",
+      "bugPoints": "3",
+      "bugID": 5,
+      "description": "When the user clicks on the about page, it bounces them to the homepage",
       "date": "2022-10-26T04:00:00.000Z",
       "id": 1
     },
     {
-      "title": "test2",
-      "priority": "Medium",
-      "bugPoints": "3",
-      "bugID": 5,
-      "description": "my desc",
-      "date": "2022-10-08T04:00:00.000Z",
+      "title": "Component Not Showing on Store Page",
+      "priority": "High",
+      "bugPoints": "4",
+      "bugID": 3,
+      "description": "The Hero banner is not rendering on the store page",
+      "date": "2022-10-29T04:00:00.000Z",
       "id": 2
     }
   ],
