@@ -1,4 +1,5 @@
 # Angular Bug tracker CRUD application using Angular Material.
+DEMO VIDEO: https://youtu.be/iJItda_rTGY
 Created a local JSON server to host data but can easily be linked to mongodb, firebase, sql etc.
 In this project, I created an API service to post, put, get and delete data
 Using Angular Material Forms and Tables, I was able to add filtering, and many form features. Pagination implemented as well.
