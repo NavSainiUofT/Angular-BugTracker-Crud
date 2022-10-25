@@ -31,7 +31,7 @@
         <!-- Progress Column -->
         <ng-container matColumnDef="priority">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Priority </th>
-          <td mat-cell *matCellDef="let row"> {{row.priority}}% </td>
+          <td mat-cell *matCellDef="let row"> {{row.priority}} </td>
         </ng-container>
     
         <!-- Name Column -->
@@ -62,7 +62,7 @@
             <button mat-icon-button color="primary" (click)="editBug(row)">
               <mat-icon>edit</mat-icon>
             </button>
-            <button mat-icon-button color="warn">
+            <button mat-icon-button color="warn" (click)="deleteBug(row.id)">
               <mat-icon>delete</mat-icon>
             </button>
           

@@ -61,6 +61,19 @@ export class AppComponent implements OnInit {
       }
     })
   }
+
+  deleteBug(id:number){
+    this.api.deleteProduct(id)
+    .subscribe({
+      next:(res)=>{
+        alert("Bug delete successfully!");
+        this.getAllBugs();
+      },
+      error:()=>{
+        alert("there was an error while deleting the bug!");
+      }
+    })
+  }
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
