@@ -1,0 +1,32 @@
+{
+  "bugList": [
+    {
+      "title": "Bug 1",
+      "priority": "High",
+      "bugPoints": "4",
+      "bugID": 1,
+      "description": "this is a random bug",
+      "date": "2022-10-26T04:00:00.000Z",
+      "id": 1
+    },
+    {
+      "title": "test2",
+      "priority": "Medium",
+      "bugPoints": "3",
+      "bugID": 5,
+      "description": "my desc",
+      "date": "2022-10-08T04:00:00.000Z",
+      "id": 2
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

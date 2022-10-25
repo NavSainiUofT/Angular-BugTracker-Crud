@@ -1,35 +1,52 @@
-<h1 mat-dialog-title>Add New Bug</h1>
+<h1 mat-dialog-title>Add a New Bug</h1>
 <div mat-dialog-content>
 
+   <form [formGroup]="bugForm">
     <mat-form-field appearance="outline">
-        <mat-label>Title</mat-label>
-        <input matInput placeholder="Title">
-      </mat-form-field>
+      <mat-label>Title</mat-label>
+      <input formControlName="title" matInput placeholder="Title">
+    </mat-form-field>
 
-      <mat-form-field appearance="outline">
-        <mat-label>Priority</mat-label>
-        <mat-select placeholder="Priority">
-            <mat-option value="">Now!</mat-option>
-            <mat-option value="">High</mat-option>
-            <mat-option value="">Medium</mat-option>
-            <mat-option value="">Low</mat-option>
-        </mat-select>
-      </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Priority</mat-label>
+      <mat-select formControlName="priority">
+          <mat-option value="Now!">Now!</mat-option>
+          <mat-option value="High">High</mat-option>
+          <mat-option value="Medium">Medium</mat-option>
+          <mat-option value="Low">Low</mat-option>
+      </mat-select>
+    </mat-form-field>
 
-      <mat-form-field appearance="outline">
-        <mat-label>Choose a launch date</mat-label>
-        <input matInput [matDatepicker]="picker">
-        <mat-hint>MM/DD/YYYY</mat-hint>
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field>
-      
-      <label for=""><h2>Bug Points</h2></label>
-      <mat-radio-group class="example-radio-group">
-        <mat-radio-button class="example-radio-button" *ngFor="let point of bugPoints" [value]="point">
-            {{point}}
-        </mat-radio-button>
-      </mat-radio-group>
+    <mat-form-field appearance="outline">
+      <mat-label>Choose a launch date</mat-label>
+      <input formControlName="date" matInput [matDatepicker]="picker">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    
+    <label for=""><h2>Bug Points</h2></label>
+    <mat-radio-group formControlName="bugPoints" class="example-radio-group">
+      <mat-radio-button class="example-radio-button" *ngFor="let point of bugPoints" [value]="point">
+          {{point}}
+      </mat-radio-button>
+    </mat-radio-group>
 
+    <mat-form-field appearance="outline">
+      <mat-label>Bug ID</mat-label>
+      <input formControlName="bugID" matInput type="number" placeholder="Title">
+    </mat-form-field>
 
+    <mat-form-field appearance="outline">
+      <mat-label>Description</mat-label>
+      <textarea formControlName="description" matInput></textarea>
+    </mat-form-field>
+
+   </form>
+
+</div>
+<div mat-dialog-action [align]="'end'">
+    
+  <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+  <button style="margin-left: 8px" mat-raised-button color="primary" mat-dialog-close (click)="addBug()">Add Bug</button>
 </div>
